@@ -17,11 +17,12 @@ export class MyuserComponent {
   public xyz : any;
 
   public edituser : any;
+  public deluser : any;
 
-  constructor(private ss : MyuserService){}
+  constructor(private service : MyuserService){}
 
   ngOnInit(){
-    this.ss.abc().subscribe(data =>{
+    this.service.abc().subscribe(data =>{
       this.xyz = data;
     })
   }
@@ -31,11 +32,12 @@ export class MyuserComponent {
   }
 
   update_data(){
-    this.ss.xyz(this.edituser).subscribe(data =>{
+    this.service.xyz(this.edituser).subscribe(data =>{
       this.ngOnInit();
       this.edituser = null;
     })
   }
+  
 
 
 }

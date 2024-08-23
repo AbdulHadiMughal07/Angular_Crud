@@ -8,7 +8,7 @@ export class MyuserService {
 
   constructor(private http : HttpClient) { }
 
-  private url = 'http://localhost:3000/CRE_app/index.php';
+  private url = 'http://localhost:3000/index.php';
 
   abc(){
     return this.http.get(this.url);
