@@ -7,23 +7,25 @@
   <title>Document</title>
 </head>
 <body>
-      <table>
-        <tr  class="fw-bold" >
-          <th>Id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Action</th>
-          <th>Action</th>
-        </tr>
+<table border="2">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Image</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
 
-        <tr *ngFor="let item of xyz">
-          <td >{{item.id}}</td>
-          <td >{{item.name}}</td>
-          <td >{{item.email}}</td>
-          <td >{{item.password}}</td>
+    <tr *ngFor="let item of xyz">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.password}}</td>
+        <td><img src="{{item.images}}" alt="" height="100px" width="100px"></td>
 
-          <td>
+        <td>
             <button class="btn btn-success mt-2 me-3" (click)="edit(item)">
               Edit
             </button>
@@ -34,38 +36,42 @@
               Delete
             </button>
           </td>
-        </tr>
-      </table>
+    </tr>
+</table>
 
-      <div class="row">
-        <div class="col-md-12">
-      <div class="container">
-      <form action="" *ngIf="edituser" (ngSubmit)="update_data()">
-      <h1 class="text-center bg-dark text-white p-2 mt-5">
-        Update Data
-      </h1>
-      <div class="mb-3">
-        <input type="text" name="id" [(ngModel)]="edituser.id" class="form-control"
-            id="exampleInputPassword1">
-      </div>
-      <div class="mb-3">
-        <input type="text" name="name" [(ngModel)]="edituser.name" class="form-control"
-            id="exampleInputPassword1">
-      </div>
-      <div class="mb-3">
-        <input type="text" name="email" [(ngModel)]="edituser.email" class="form-control"
-            id="exampleInputPassword1">
-      </div>
-      <div class="mb-3">
-        <input type="text" name="password" [(ngModel)]="edituser.password" class="form-control"
-            id="exampleInputPassword1">
-      </div>
+<div class="row">
+    <div class="col-md-12">
+  <div class="container">
+  <form action="" *ngIf="edituser" (ngSubmit)="update_data()">
+  <h1 class="text-center bg-dark text-white p-2 mt-5">
+    Update Data
+  </h1>
+  <div class="mb-3">
+    <input type="text" name="id" [(ngModel)]="edituser.id" class="form-control"
+        id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <input type="text" name="name" [(ngModel)]="edituser.name" class="form-control"
+        id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <input type="text" name="email" [(ngModel)]="edituser.email" class="form-control"
+        id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <input type="text" name="password" [(ngModel)]="edituser.password" class="form-control"
+        id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <input type="file" name="images" [(ngModel)]="edituser.images" class="form-control"
+        id="exampleInputPassword1">
+  </div>
 
-       <button type="submit" class="btn btn-success">Update</button>
-      </form>
-      </div>
-      </div>
-      </div>
+   <button type="submit" class="btn btn-success">Update</button>
+  </form>
+  </div>
+  </div>
+  </div>
 </body>
 </html>
 
